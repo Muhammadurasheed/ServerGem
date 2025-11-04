@@ -1,0 +1,5 @@
+{
+  "name": "ServerGem: Your Backend Copilot",
+  "description": "ServerGem is an intelligent VSCode extension that revolutionizes backend development by combining the functionality of Postman/Thunder Client with real-time AI-powered debugging and troubleshooting using Gemini.",
+  "requestFramePermissions": []
+}

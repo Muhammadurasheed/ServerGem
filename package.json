@@ -1,0 +1,60 @@
+{
+  "name": "servergem",
+  "displayName": "ServerGem: Your Backend Copilot",
+  "description": "An intelligent VSCode extension that combines API testing with real-time AI-powered debugging and troubleshooting using Gemini.",
+  "version": "0.1.0",
+  "publisher": "servergem",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Developer Tools",
+    "Testing"
+  ],
+  "activationEvents": [
+    "onCommand:servergem.start"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "servergem.start",
+        "title": "ServerGem: Start",
+        "category": "ServerGem"
+      },
+      {
+        "command": "servergem.setApiKey",
+        "title": "ServerGem: Set API Key",
+        "category": "ServerGem"
+      },
+      {
+        "command": "servergem.clearApiKey",
+        "title": "ServerGem: Clear API Key",
+        "category": "ServerGem"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "node esbuild.js --production",
+    "lint": "eslint 'src/**/*.ts' 'webview/**/*.ts' 'webview/**/*.tsx'",
+    "test": "echo 'Tests not implemented yet'"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "esbuild": "^0.20.2",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@google/genai": "^1.28.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zustand": "^5.0.8"
+  }
+}
