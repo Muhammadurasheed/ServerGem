@@ -1,0 +1,22 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "watch-extension",
+			"type": "npm",
+			"script": "watch",
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "esbuild-watch",
+				"pattern": {
+					"regexp": ".*"
+				},
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "^\\[watch\\] build started$",
+					"endsPattern": "^\\[watch\\] initial builds finished$"
+				}
+			}
+		}
+	]
+}
