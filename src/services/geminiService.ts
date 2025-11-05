@@ -77,7 +77,9 @@ ${formatErrorForPrompt(error)}
         });
 
         for await (const chunk of response) {
-            yield chunk.text;
+            if (typeof chunk.text === 'string') {
+                yield chunk.text;
+            }
         }
 
     } catch (e: any) {

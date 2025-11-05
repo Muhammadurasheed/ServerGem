@@ -43,13 +43,16 @@
     "test": "echo 'Tests not implemented yet'"
   },
   "devDependencies": {
+    "@types/node": "^18.19.130",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
     "@types/vscode": "^1.85.0",
-    "@types/node": "18.x",
     "@typescript-eslint/eslint-plugin": "^7.10.0",
     "@typescript-eslint/parser": "^7.10.0",
     "esbuild": "^0.20.2",
     "eslint": "^8.57.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.9.3",
+    "vscode": "^1.1.37"
   },
   "dependencies": {
     "@google/genai": "^1.28.0",

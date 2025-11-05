@@ -1,4 +1,6 @@
+/// <reference types="vscode" />
 import * as vscode from 'vscode';
+import * as path from 'path';
 import { sendApiRequest } from '../services/apiService';
 import { ApiKeyManager } from '../ApiKeyManager';
 import { FromWebviewMessage, ToWebviewMessage } from '../types';
@@ -33,7 +35,7 @@ export class MainPanel {
       column || vscode.ViewColumn.One,
       {
         enableScripts: true,
-        localResourceRoots: [vscode.Uri.joinPath(extensionUri, 'dist')],
+        localResourceRoots: [vscode.Uri.file(path.join(extensionUri.fsPath, 'dist'))],
       }
     );
 
@@ -64,9 +66,8 @@ export class MainPanel {
       this._disposables
     );
   }
-
   private _getHtmlForWebview(webview: vscode.Webview): string {
-    const scriptUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'dist', 'webview.js'));
+    const scriptUri = webview.asWebviewUri(vscode.Uri.file(path.join(this._extensionUri.fsPath, 'dist', 'webview.js')));
     const nonce = getNonce();
 
     return /*html*/`

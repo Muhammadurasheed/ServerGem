@@ -1,4 +1,4 @@
-import { HttpMethod, KeyValuePair, ApiResponse, ApiError } from '../../src/types';
+import { HttpMethod, KeyValuePair, ApiResponse, ApiError } from '../src/types';
 
 export interface WebviewState {
   method: HttpMethod;
